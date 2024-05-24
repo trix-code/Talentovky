@@ -1,0 +1,620 @@
+
+
+*,*::after,*::before{
+	box-sizing:inherit
+}
+	
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font:inherit
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+	box-sizing:border-box
+}
+
+
+body {
+	min-width:350px;
+	font-family: cursive;
+	background-color: rgb(45,45,45);
+	color: white;
+	font-size: 16px;
+	font-family:Open Sans;
+	}
+
+a,.link{
+	color:rgb(255,255,255);
+	text-decoration:none
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+  color: rgb(255,255,255);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 40px; 
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+ li, ul, menu {
+  list-style: none;
+}
+
+button, input, textarea {
+	background-color: rgb(60,60,60);
+	border-radius: 0;
+	color: inherit;
+	-webkit-appearance: none;
+            appearance: none;
+	width: 100%;
+    padding: 3px;
+    margin-bottom: 10px;
+	margin-top:5px;
+	border: 1px solid rgba(0,230,230,0.3);
+}
+
+textarea {
+  resize: vertical;
+  overflow: auto;
+  vertical-align: top;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+
+/* NAVBAR */
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+	background-color: rgb(45,45,45);
+	z-index:2;
+}
+
+.nav-links a {
+	color: #fff;
+}
+
+/* LOGO */
+
+.logo {
+	font-size: 32px;
+	font-weight:700;
+}
+
+/* MENU */
+
+.menu {
+	display: flex;
+	gap: 20px;
+	font-size: 20px;
+	z-index:2;
+}
+
+.menu li:hover {
+	background-color: rgb(45,45,45);
+	border-radius: 5px;
+	transition: 0.3s ease;
+	outline: 2px solid rgb(0,230,230);
+}
+
+.menu li {
+	padding: 5px 14px;
+}
+
+.services {
+	position: relative;
+	z-index:2;
+}
+
+.dropdown {
+	background-color: rgb(45,45,45);
+	padding: 10px 0;
+	position: absolute; 
+	display: none;
+	border-radius: 8px;
+	top: 38px;
+}
+
+.dropdown li {
+	padding: 10px 20px;
+	width: 150px;
+	text-align: center;
+}
+
+/* dlouhe - rozbalene */
+.dropdown li:hover {
+	background-color: rgb(45,45,45);
+	outline: 2px solid rgb(0,230,230);
+}
+
+.services:hover .dropdown {
+	display: block;
+}
+
+/*  RESPONSIVE NAVBAR  */
+
+/* CHECKBOX HACK */
+
+input[type=checkbox]{
+	display: none;
+}
+
+/*HAMBURGER MENU*/
+
+.hamburger {
+	display: none;
+	font-size: 30px;
+	user-select: none;
+}
+
+@media (max-width: 700px) {
+
+.menu {
+	display:none;
+	position: absolute;
+	background-color:rgb(45,45,45);
+	right: 0;
+	left: 0;
+	text-align: center;
+	padding: 12px 0;
+}
+/* male - rozbalene */
+.menu li:hover {
+	display: inline-block;
+	background-color:rgb(45,45,45);
+	transition: 0.3s ease;
+	outline: 2px solid rgb(0,230,230);
+}
+
+.menu li + li {
+	margin-top: 12px;
+}
+
+input[type=checkbox]:checked ~ .menu{
+	display: block;
+}
+
+.hamburger {
+	display: block;
+}
+
+.dropdown {
+	left: 60%;
+	top: 0px;
+	transform: translateX(35%);
+}
+
+.dropdown li:hover {
+	background-color: rgb(45,45,45);
+	outline: 2px solid rgb(0,230,230);
+}
+
+}
+
+ /* Obsah stranky */
+ 
+
+.stranka-nazev {
+	width:400px;
+	margin: auto;
+	margin-bottom:20px;
+	font: 600 25px Open Sans;
+	text-align: center;
+	outline: 0px solid rgb(0,230,230);
+}	
+
+.home-stranka {
+	max-width:1024px;
+	margin:auto;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom:10px;
+	z-index:5;
+}
+
+.home-text {
+	min-width:600px;
+	font-size: 32px;
+	margin-top:10px;
+	padding:20px;
+	text-align:center;
+}
+.home-img {
+	width:600px;
+	height:600px;
+}
+   
+   /*  O mne  */
+   
+.aboutIMG {
+	max-width:150px;
+	margin-right:10px;
+	float:left;
+	box-shadow:grey 2px 2px 5px;
+}
+
+/*   Hobby - hlavni  */
+
+.hobby-item {
+	min-width:250px;
+	min-height:200px;
+	margin: 20px;
+	margin-bottom:50px;
+	display:flex;
+	justify-content:flex-start;
+	flex-wrap:wrap;
+	align-items:center;
+	gap:20px;
+}
+
+.hobby-hov:hover  {
+	text-decoration: none;
+    filter: grayscale(70%);
+    opacity: 0.75;
+}
+
+.hobby-img {
+	height:200px;
+	outline:  0px solid green;
+}
+
+.hobby-text {
+	max-width:500px;
+	text-align:left;
+}
+
+.hobby-popis {
+	max-width:1024px;
+	margin:auto;
+	padding-left:20px;
+	margin-bottom:30px;
+	font: 500 20px Open Sans;
+}
+
+.home-galerie {
+	max-width:1024px;
+	margin:auto;
+	column-count: 5;
+	column-gap: 16px;
+
+	z-index:5;
+}
+
+.home-galerie:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+    
+.hobby-card {
+
+    width:200px;
+	  display: inline-block;
+
+    margin: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+	outline:  0px solid white;
+}
+
+.hobby-card:hover {
+    box-shadow: 0px 5px 15px rgba(0,230,230,0.5);
+}
+
+
+
+/* Add some padding inside the card container */
+.hobby-container {
+    padding: 2px 16px;
+}
+
+.banner {
+  width: 80%;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  background-color: rgb(45,45,45);
+  box-shadow: 0 3.5px 4px rgba(250,230,230,0.1);
+  border-radius: 5px;
+  transition: 0.3s;
+  margin:30px;
+  outline: 1px solid black;
+}
+
+.banner__grid {
+  display: flex;
+  flex-direction: row;
+}
+
+.banner__grid > * {
+  min-width: 0;
+}
+
+.banner__link {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform-origin: left bottom;
+}
+
+.banner__link i { 
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  margin-top:30px;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.banner__link::after { 
+  content: "";
+  background-color: currentColor;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  opacity: 0.15;
+  transition: 0.3s ;
+}
+
+.banner__figure {
+  height: 0;
+  width: 300px;
+  padding-bottom: 80%;
+  transition: 0.3s ;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner_text {
+  padding: 30px;
+}
+
+.banner__link-wrapper {
+  margin-top: 10px;
+}
+
+.banner:hover {
+  box-shadow: 0 5px 10px rgb(0,230,230);
+}
+
+.banner:hover .banner__link {
+  transform: scale(1);
+  
+}
+
+.banner:hover .banner__link i { 
+  transform: scale(0.9);
+}
+
+.banner:hover .banner__link::after {
+  height: calc(100% - 25px);
+    width: 120%;
+}
+
+.banner:hover .banner__figure {
+  transform: scale(1.1);
+}
+
+@media (min-width: 700px) {
+  .banner__grid {
+    flex-direction: row-reverse;
+  }
+
+  .banner__grid > * {
+    width: 50%;
+  }
+
+  .banner__figure {
+    height: 200px;
+    padding-bottom: 0;
+  }
+
+  .banner_text {
+    padding: 50px;
+  }
+
+  .banner__link-wrapper {
+    margin-top: 30px;
+  }
+
+  .banner--invert .banner__grid {
+    flex-direction: row;
+  }
+  /*  orezani obrazku na banneru  */
+  .banner--invert .banner__figure {
+    -webkit-clip-path: polygon(0% 0%, calc(100% - 200px) 0%, calc(100% - 50px) 100%, 0% 100%);
+            clip-path: polygon(0% 0%, calc(100% - 150px) 0%, calc(100% - 50px) 100%, 0% 100%);
+  }
+
+  .banner--invert .banner_text {
+    text-align: right;
+  }
+
+  .banner--invert .banner__link {
+    transform-origin: center center;
+  }
+
+  .banner:hover .banner__figure {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+	/* Kontakt */
+
+.social {
+	float:left;
+	position: relative;
+	margin:10px;
+	outline:  0px solid white;
+}
+
+.kontakt-info {
+	margin:20px;
+	outline:  0px solid yellow;
+}
+
+.socialLOGO {
+	width:50px;
+	margin:15px;
+	float:right;
+}
+.form {
+	width:400px;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+	align-items: center;
+	margin:auto;
+	padding-top:15px;
+	padding-bottom:15px;
+	box-shadow: 2px 2px 7px rgb(0,230,230); 
+	outline: 0px solid white;
+	
+}
+
+.form-input{
+	width: 100%;
+	margin-top:10px;
+	margin-bottom:10px;
+	outline: 0px solid yellow;
+}
+
+@media (max-width: 1000px) {
+.home-galerie {
+	column-count: 4;
+}
+}
+
+@media (max-width: 810px) {
+.home-galerie {
+	column-count: 3;
+}
+}
+
+@media (max-width: 460px) {
+.home-galerie {
+	column-count: 2;
+}
+}
+@media (max-width: 700px) {
+
+body {
+    font-size:16px;
+
+}
+.stranka-nazev, .stranka-kategorie {
+	width:200px;
+	margin: auto;
+	padding: 10px;
+	font: 600 16px Open Sans;
+	text-align: center;
+}	
+.form {
+	width:300px;
+	margin:auto;	
+	padding:10px;
+	padding-right:13px;
+}
+
+.form-input {
+	margin:5px;		
+}
+
+ input, textarea {
+    width: 100%;
+    padding: 3px;
+    margin-bottom: 10px;
+	margin-top:5px;
+	background: rgb(60,60,60);
+    border: 1px solid rgba(0,230,230,0.3);
+    outline: none;
+}
+
+		
+.hobby-card {
+    width:150px;
+	margin: 5px;
+}
+
+.hobby-popis {
+
+	margin:auto;
+	margin-bottom:30px;
+	font: 400 16px Open Sans;
+}
+
+.home-text {
+	min-width:250px;
+	font-size: 18px;
+	top:10px;
+
+	padding-left:25px;
+	padding-right:25px;
+	outline:  0px solid green;
+}
+
+.home-img {
+	width:300px;
+	height:300px;
+}
+
+h2 {
+	font-size:20px;
+}
+h4 {
+	font-size:14px;
+}
+
+.socialLOGO {
+	width:40px;
+	margin:10px;
+	float:left;
+}
+
+}	
+
+
+/*
+.home {
+	background-color: #4c9e9e;
+}
+*/
+

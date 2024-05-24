@@ -1,0 +1,103 @@
+<?php 
+// Form submission script 
+include_once 'submit.php'; 
+?>
+
+
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Tomas Kotik">
+	<meta http-equiv="Content-language" content="cs">
+	
+	<title>Tom's life</title>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+<nav class="navbar">
+	<div class="logo">Tom's life</div>
+
+	<ul class="nav-links">
+
+	<input type="checkbox" id="checkbox_toggle" />
+	<label for="checkbox_toggle" class="hamburger">&#9776;</label>
+
+	<div class="menu">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="about.html">O mně</a></li>
+
+		<li class="services">
+		<a href="hobby.html">Co mě baví</a>
+
+			<ul class="dropdown">
+
+			<li><a href="hobby_pc.html">Počítače</a></li>
+			<li><a href="hobby_sport.html">Sport</a></li>
+			<li><a href="hobby_other.html">Ostatní</a></li>
+
+			</ul>
+		</li>
+		<li><a href="contact.php">Kontakt</a></li>
+
+	</div>
+	</ul>
+</nav>
+
+
+<div class="home-stranka" style="display:flex; flex-direction: column; justify-content: center;	align-items: center">
+	<div class="stranka-nazev">
+	Kontakt
+	</div>
+	<div class="social">
+	<img src="img/soucasnost.jpg" style="max-width:180px; float:left; margin-right:25px">
+	<div class="kontakt-info">
+	Chcete se podívat na mé socialní sítě nebo si online zahrát? Můžete mi poslat vzkaz. 
+	</div>
+		<a href="/">
+		<img class="socialLOGO" src="img/fb.png">
+		</a>
+		<a href="/">
+		<img class="socialLOGO" src="img/instagram.png">
+		</a>
+	</div>
+	
+</div>
+	
+
+	
+
+	<div class="form">
+	<form action="" method="post">
+    <div class="form-input">
+        <label for="name">Jméno</label>
+        <input type="text" name="name" placeholder="" value="<?php echo !empty($postData['name'])?$postData['name']:''; ?>" required="">
+    </div>
+    <div class="form-input">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="" value="<?php echo !empty($postData['email'])?$postData['email']:''; ?>" required="">
+    </div>
+
+
+    <div class="form-input">
+        <label for="message">Zpráva</label>
+        <textarea name="message" placeholder="" required="" rows="4"><?php echo !empty($postData['message'])?$postData['message']:''; ?></textarea>
+    </div>
+    
+    <input type="submit" name="submit" class="btn" value="Odeslat">
+	</form>
+
+</div>
+
+
+
+</body>
+</html>
